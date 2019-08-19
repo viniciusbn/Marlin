@@ -354,7 +354,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50 //VBNMODE power on the hot end fan when the temperature is above 50º
-#define EXTRUDER_AUTO_FAN_SPEED 255   //VBNMODE 255 == full speed , set the speed for hot end fan
+#define EXTRUDER_AUTO_FAN_SPEED 155   //VBNMODE 255 == full speed , set the speed for hot end fan
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
 
@@ -1840,7 +1840,7 @@
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
+  #define Z_HYBRID_THRESHOLD       5  //VBNMODE 3
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define E0_HYBRID_THRESHOLD     30
