@@ -135,7 +135,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "Ender 3 SKR 1.3"
+#define CUSTOM_MACHINE_NAME "Ender 3 SKR 1.3"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -473,10 +473,10 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
-  // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  // Creality Ender-3 VBNMODE
+  #define DEFAULT_Kp 15.25
+  #define DEFAULT_Ki 1.02
+  #define DEFAULT_Kd 56.86
   
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -541,9 +541,9 @@
   //#define DEFAULT_bedKd 1675.16
 
   // My PID Autotune Settings Ender 3
-  #define  DEFAULT_bedKp 161.13
-  #define  DEFAULT_bedKi 11.18
-  #define  DEFAULT_bedKd 580.65
+  #define  DEFAULT_bedKp 192.58
+  #define  DEFAULT_bedKi 35.76
+  #define  DEFAULT_bedKd 693.23
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -733,7 +733,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 12, 120 }
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -1036,7 +1036,7 @@
 
 //#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-#define Z_HOMING_HEIGHT 4  // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 10  // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
@@ -1313,13 +1313,13 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-//#define BED_CENTER_AT_114_122
+//#define BED_CENTER_AT_0_0
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS 3.5 //VBNMODE uncomment and set -0.7
-#define MANUAL_Y_HOME_POS -4.8 //VBNMODE uncomment and set -8.9
-//#define MANUAL_Z_HOME_POS 0 //VBNMODE uncomment
+#define MANUAL_X_HOME_POS 3.5 //VBNMODE
+#define MANUAL_Y_HOME_POS -4.8 //VBNMODE
+//#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
@@ -2041,6 +2041,12 @@
 // Touch-screen LCD for Malyan M200 printers
 //
 //#define MALYAN_LCD
+
+//
+// LulzBot Color Touch UI for FTDI EVE (FT800/FT810) displays
+// See Configuration_adv.h for all configuration options.
+//
+//#define LULZBOT_TOUCH_UI
 
 //
 // Third-party or vendor-customized controller interfaces.
